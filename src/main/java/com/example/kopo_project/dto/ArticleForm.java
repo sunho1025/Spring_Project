@@ -1,5 +1,5 @@
 package com.example.kopo_project.dto;
-
+//git test
 import com.example.kopo_project.entity.Article;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
