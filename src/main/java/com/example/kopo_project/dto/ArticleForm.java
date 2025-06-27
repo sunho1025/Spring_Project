@@ -14,8 +14,8 @@ public class ArticleForm {
     private String title;
     private String content;
 
-        //toString, getter, setter 지움
-        public Article toEntity() {
-            return new Article(null, title, content);
+    //toString, getter, setter 지움
+    public Article toEntity() {
+        return new Article(null, title, content);
     }
 }

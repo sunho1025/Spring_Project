@@ -5,11 +5,13 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 @AllArgsConstructor
 @NoArgsConstructor
+@Getter
 @ToString
 @Entity //해당클래스가 엔티티임을 명시 -> 테이블 생성
 public class Article {
@@ -41,4 +43,5 @@ public class Article {
                 '}';
     }
     */
+
 }

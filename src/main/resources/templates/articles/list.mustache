@@ -10,15 +10,15 @@
     </thead>
 
     <tbody>
-    {{#article}}
-    <tr>
-        <th>{{id}} </th>
-        <td>{{title}}</td>
-        <td>{{content}}</td>
-    </tr>
-    {{/article}}
+    {{#articles}}
+        <tr>
+            <th>{{id}}</th>
+            <td><a href="/articles/{{id}}">{{title}}</a></td>
+            <td>{{content}}</td>
+        </tr>
+    {{/articles}}
     </tbody>
 </table>
-<a href="/articles">목록 화면</a>
+<a href="/articles/new">새 글 작성</a>
 
 {{>layout/footer}}
