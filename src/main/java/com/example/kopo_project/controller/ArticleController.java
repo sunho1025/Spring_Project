@@ -88,4 +88,28 @@ public class ArticleController {
         model.addAttribute("imgPath","/cat_02.jpg");
         return "img";
     }
+
+    @GetMapping("/articles/{id}/update")
+    public String updateArticleForm(@PathVariable Long id, Model model){
+        Article article = articleRepository.findById(id).orElse(null);
+        model.addAttribute("article",article);
+        return "articles/update";
+    }
+
+    @PostMapping("/articles/update")  //생성 요청
+    public String updateArticle(ArticleForm articleForm) { //DTO로 데이터 수집
+        log.info(articleForm.toString());
+        // DTO -> Entity
+        Article article = articleForm.toEntity();
+        log.info(article.toString());
+
+        //Repository -> DB
+        Article saved = articleRepository.save(article);
+        //System.out.println(saved.toString());
+        log.info(saved.toString());
+
+        //view
+        return "redirect:/articles/" + saved.getId(); //리다이렉트 redirect: 주소
+        //1번글이면, redirect:/articles/1
+    }
 }
